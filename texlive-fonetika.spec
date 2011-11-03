@@ -1,3 +1,9 @@
+# revision 21326
+# category Package
+# catalog-ctan /fonts/fonetika
+# catalog-date 2008-08-19 20:38:14 +0200
+# catalog-license other-free
+# catalog-version undef
 Name:		texlive-fonetika
 Version:	20080819
 Release:	1
@@ -60,6 +66,7 @@ were created using FontForge.
 %doc %{_texmfdistdir}/doc/fonts/fonetika/README
 %doc %{_texmfdistdir}/doc/fonts/fonetika/fonetika.pdf
 %doc %{_texmfdistdir}/doc/fonts/fonetika/fonetika.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -70,3 +77,5 @@ were created using FontForge.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
