@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-fonetika
 Version:	20080819
-Release:	2
+Release:	3
 Summary:	Support for the danish "Dania" phonetic system
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fonetika
