@@ -12,7 +12,8 @@ Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fonetika.r%{tl_r
 Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fonetika.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
 BuildSystem:	texlive
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 Fonetika Dania is a font bundle with a serif font and a sans serif font
@@ -20,3 +21,10 @@ for the danish phonetic system Dania. Both fonts exist in regular and
 bold weights. LaTeX support is provided. The fonts are based on URW
 Palladio and Iwona Condensed, and were created using FontForge.
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_updmap_d}
+cat > %{buildroot}%{_texmf_updmap_d}/%{tl_name} <<'TL_DROPIN_EOF'
+# from fonetika:
+Map fonetika.map
+TL_DROPIN_EOF
